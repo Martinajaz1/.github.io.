@@ -1,5 +1,4 @@
-# .github.io.
-[index-edited.html](https://github.com/user-attachments/files/33992271/index-edited.html)
+(https://github.com/user-attachments/files/33992271/index-edited.html)
 <!DOCTYPE html>
 <html lang="es"><head>
   <meta charset="UTF-8">
