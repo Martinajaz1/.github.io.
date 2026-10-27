@@ -1,2 +1,255 @@
 # .github.io.
 Martina Romero portfolio
+[index-edited.html](https://github.com/user-attachments/files/33992271/index-edited.html)
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio digital de Martina Romero, estudiante de secundaria con orientación en Naturales.">
+  <title>Martina Romero | Portfolio digital</title>
+  <style>
+    :root {
+      --bg: #08121b;
+      --panel: #101f2b;
+      --panel2: #142735;
+      --text: #edf5f5;
+      --muted: #a8bdc5;
+      --accent: #73e0c1;
+      --accent2: #9bc8ff;
+      --line: rgba(198, 228, 233, .15);
+      --shadow: 0 18px 45px rgba(0,0,0,.2);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 80% 0%, rgba(48,126,128,.18), transparent 36%), var(--bg);
+      color: var(--text); line-height: 1.65;
+    }
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(18px);
+      background: rgba(8,18,27,.85); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; text-decoration: none; font-size: 1.05rem; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    nav a { font-size: .9rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    nav a:hover { color: var(--accent); }
+    .hero { padding: 100px 0 86px; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 48px; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .17em; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(3rem, 7vw, 5.6rem); line-height: .99; letter-spacing: -.07em; margin: 18px 0 22px; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 640px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 12px 19px; text-decoration: none; font-weight: 750; font-size: .92rem; border: 1px solid var(--line); transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #062019; border-color: var(--accent); }
+    .hero-art { min-height: 340px; display: grid; place-items: center; position: relative; }
+    .orbit { width: min(330px, 75vw); aspect-ratio: 1; border: 1px solid rgba(115,224,193,.38); border-radius: 50%; display: grid; place-items: center; position: relative; background: radial-gradient(circle, rgba(115,224,193,.12), transparent 65%); }
+    .orbit:before, .orbit:after { content: ""; position: absolute; border: 1px solid rgba(155,200,255,.28); border-radius: 50%; inset: 26px; transform: rotate(35deg) scaleX(.72); }
+    .orbit:after { transform: rotate(-35deg) scaleX(.72); }
+    .orb-core { width: 126px; height: 126px; display: grid; place-items: center; border-radius: 34px; background: linear-gradient(145deg, var(--accent), var(--accent2)); color: #08202a; font-size: 3rem; box-shadow: 0 0 70px rgba(115,224,193,.22); transform: rotate(-8deg); }
+    .floating { position: absolute; padding: 10px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; color: var(--muted); box-shadow: var(--shadow); font-size: .85rem; }
+    .f1 { top: 13%; right: 0; } .f2 { bottom: 13%; left: 0; }
+    section { padding: 78px 0; }
+    .section-head { max-width: 700px; margin-bottom: 32px; }
+    .section-kicker { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.1; letter-spacing: -.055em; margin: 9px 0 14px; }
+    .section-head p, .about-card p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; }
+    .about-card, .project, .skill, .contact-box { background: linear-gradient(145deg, var(--panel), rgba(16,31,43,.76)); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
+    .about-card { padding: 30px; }
+    .about-mark { width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; background: rgba(115,224,193,.12); color: var(--accent); font-size: 1.6rem; margin-bottom: 18px; }
+    .facts { display: grid; gap: 12px; }
+    .fact { display: flex; align-items: center; gap: 14px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 15px; color: var(--muted); }
+    .fact b { color: var(--text); display: block; }
+    .year-title { display: flex; align-items: center; gap: 14px; margin: 38px 0 20px; }
+    .year-title h3 { margin: 0; font-size: 1.45rem; }
+    .year-line { height: 1px; flex: 1; background: var(--line); }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 17px; }
+    .project { padding: 24px; transition: transform .22s, border-color .22s; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(115,224,193,.45); }
+    .project-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .project-icon { width: 44px; height: 44px; flex: 0 0 44px; display: grid; place-items: center; background: rgba(115,224,193,.1); border-radius: 14px; font-size: 1.3rem; }
+    .tag { color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .project h4 { font-size: 1.16rem; line-height: 1.3; margin: 15px 0 10px; }
+    .project p { color: var(--muted); font-size: .94rem; margin: 0; }
+    .skills { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 15px; }
+    .skill { padding: 23px; }
+    .skill .symbol { font-size: 1.4rem; margin-bottom: 10px; }
+    .skill h3 { font-size: 1rem; margin: 0 0 7px; }
+    .skill p { color: var(--muted); font-size: .9rem; margin: 0; }
+    .contact-box { padding: clamp(26px, 5vw, 54px); display: flex; justify-content: space-between; align-items: center; gap: 28px; background: radial-gradient(circle at 90% 10%, rgba(115,224,193,.13), transparent 40%), var(--panel); }
+    .contact-box p { max-width: 590px; color: var(--muted); margin-bottom: 0; }
+    footer { padding: 28px 0; color: var(--muted); border-top: 1px solid var(--line); font-size: .85rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
+      nav { gap: 14px; }
+      .hero { padding: 66px 0 52px; }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-art { min-height: 290px; }
+      .projects { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .contact-box { align-items: flex-start; flex-direction: column; }
+      section { padding: 58px 0; }
+    }
+    @media (max-width: 460px) {
+      .container { width: min(100% - 28px, 1120px); }
+      nav { gap: 10px 14px; }
+      nav a { font-size: .82rem; }
+      .skills { grid-template-columns: 1fr; }
+      .project { padding: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header style="background-color: rgb(3, 52, 104);">
+    <div class="container nav" style="background-color: rgb(3, 52, 104);">
+      <a class="brand" href="#inicio">MR<span>.</span> portfolio</a>
+      <nav aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" style="font-family: Georgia, serif; color: rgb(255, 255, 255); background-color: rgb(208, 227, 251); border-color: rgb(245, 255, 255);">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" style="color: rgb(3, 21, 58);">Portfolio digital · 2025—2026</div>
+          <h1>Hola, soy<br><span style="color: rgb(1, 10, 75);">Martina Romero.</span></h1>
+          <p class="lead" style="color: rgb(0, 0, 0);">Estudiante de secundaria con orientación en Naturales. Este espacio reúne experiencias, proyectos y aprendizajes que forman parte de mi recorrido escolar.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#proyectos" style="background-color: rgb(3, 52, 104); color: rgb(255, 255, 255);">Explorar proyectos ↗</a>
+            <a class="btn" href="#sobre-mi" style="color: rgb(6, 2, 64);">Conocer mi recorrido</a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="sobre-mi" style="background-color: rgb(4, 30, 57);">
+      <div class="container" style="background-color: rgb(3, 52, 104);">
+        <div class="section-head">
+          <div class="section-kicker" style="color: rgb(255, 255, 255);">01 / Sobre mí</div>
+          
+          <p>Un recorrido por las experiencias que me ayudaron a incorporar conocimientos y desarrollar nuevas habilidades.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card" style="background-color: rgb(33, 39, 131);">
+            <div class="about-mark" style="color: rgb(208, 227, 251);">✦</div>
+            <p>Soy Martina, estudiante de secundaria. Me considero una persona responsable y con ganas de aprender cosas nuevas y desarrollar mis habilidades.</p>
+            <br>
+            <p>Me gusta trabajar en proyectos que me permitan expresar mis ideas, investigar diferentes temas y aprender a utilizar herramientas digitales. A través de este portafolio, quiero compartir mis trabajos, mostrar lo que fui aprendiendo y reflejar mi progreso de estos últimos dos años de secundaria.</p>
+          </article>
+          <div class="facts">
+            <div class="fact"><span>🧪</span><div><b>Orientación en Naturales</b>Interés por la ciencia y la investigación</div></div>
+            <div class="fact"><span>🤝</span><div><b>Experiencias compartidas</b>Proyectos grupales y solidarios</div></div>
+            <div class="fact"><span>💡</span><div><b>Aprendizaje continuo</b>Nuevas ideas, herramientas y desafíos</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" style="background-color: rgb(4, 30, 57);">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" style="color: rgb(255, 255, 255);">02 / Mi recorrido</div>
+          <h2 style="color: rgb(208, 227, 251);">Proyectos y experiencias.</h2>
+          <p>Cada actividad me permitió conocer temas nuevos, colaborar con otras personas y aprender desde la práctica.</p>
+        </div>
+
+        <div class="year-title"><h3>2025</h3><div class="year-line"></div></div>
+        <div class="projects">
+          <article class="project" style="background-color: rgb(3, 52, 104);"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Educación financiera</span></div><h4>Curso de Educación Financiera — Junior Achievement</h4><h4 style="font-weight: 400; font-size: 15.04px; color: rgb(168, 189, 197);">En el curso de Educación Financiera de Junior Achievement aprendí sobre distintos temas relacionados con el manejo del dinero y la importancia de tomar buenas decisiones económicas. Vimos cómo organizar los ingresos y los gastos, armar un presupuesto, ahorrar para cumplir objetivos y diferenciar las necesidades de los gustos personales. También conocí más sobre el funcionamiento de los bancos, los medios de pago, las tarjetas de crédito y débito, los préstamos y las inversiones. Además, aprendí sobre el consumo responsable, la importancia de planificar los gastos y los riesgos de las estafas financieras.</h4></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Ciencias naturales</span></div><h4>Feria de ciencias — Ciudad Universitaria</h4><p>En esta visita a Ciudad Universitaria, tuvimos una charla sobre la evolución de los homínidos, desde Australopithecus hasta Homo sapiens. Nos mostraron varios tipos de homínidos y las diferencias entre ellos, utilizando cráneos de cada uno para que pudieramos observar sus características. 
+También visitamos una feria de ciencias, en la que habia distintos puestos que enseñaban temas variados. Uno de los que pude ver fue el de extracción de ADN de una banana, donde nos mostraron y explicaron todo el procedimiento del experimento. Además nos dejaron ayudar y aprender a hacerlo nosotros. 
+Otro puesto que visite fue uno sobre cangrejos. En este nos explicaron las partes de su cuerpo, de que se alimentan, de dónde provienen y cuáles son los cuidados que necesitan.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Compromiso social</span></div><h4>Misión Victoria — Entre Ríos</h4><p>La Misión Victoria es un viaje solidario que realizamos con el colegio, alumnos de 4to y 5to año, junto a algunos profesores. Durante esta experiencia, visitamos distintas casas para conversar con las personas, escucharlas y compartir un momento con ellas. También realizamos actividades y juegos con los chicos, visitamos colegios y compartimos tiempo con las personas de un geriátrico. 
+En este viaje, el trabajo en equipo tuvo un papel muy importante. Nos organizábamos y dividíamos las tareas, como la limpieza y la cocina, y también colaborábamos en la preparación de distintos juegos y actividades para compartir con los chicos y entre nosotros.</p></article>
+        </div>
+
+        <div class="year-title"><h3>2026</h3><div class="year-line"></div></div>
+        <div class="projects">
+          <article class="project"><div class="project-top" style="color: rgb(208, 227, 251);"><span class="tag" style="color: rgb(208, 227, 251);">Educación financiera</span></div><h4>Banco Ciudad — Taller de Educación Financiera</h4><p>Participamos de un taller de educación financiera, en el que vimos distintos temas relacionados con el manejo del dinero, como el ahorro, la organización de los gastos y cómo administrar mejor nuestra plata. También aprendimos sobre la importancia de planificar nuestros gastos y tomar decisiones económicas responsables.
+Después, recorrimos el museo del banco, donde pudimos observar objetos antiguos, fotografías y documentos que mostraban cómo era el banco en otras épocas. Durante el recorrido, conocimos más sobre como surgió y los cambios que tuvo a lo largo del tiempo. También vimos cómo vivían las personas, especialmente en la época de la inmigración y como todo esto contribuyo a su creación.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Orientación vocacional</span></div><h4>CBC — UBA</h4><p>En la visita a una de las sedes del CBC de la UBA, pudimos conocer un poco más sobre cómo funciona la universidad y cómo es la experiencia de estudiar una carrera después de terminar la secundaria. Nos explicaron qué es el CBC, cómo se organiza y qué importancia tiene como parte del ingreso a muchas carreras de la UBA. También nos explicaron las diferencias entre los cursos, las tecnicaturas, las carreras de grado y otros tipos de formación, teniendo en cuenta su duración y sus características. Fue una oportunidad para conocer más sobre las opciones de estudio y resolver dudas sobre esta nueva etapa.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Historia y reflexión</span></div><h4>Encuentro sobre la Nakba — Colegio Argentino Árabe Islámico Omar Bin Al Jattab</h4><p>Este encuentro estuvo dedicado a la conmemoración de la Nakba, un acontecimiento importante en la historia del pueblo palestino. Durante la jornada vimos un video que combinaba imágenes históricas con explicaciones sobre lo sucedido y las experiencias de las personas palestinas. Además, entre todos debatimos qué podíamos hacer desde nuestro lugar para ayudar a cambiar la situación que se vive en Palestina.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Ciencias de la Tierra</span></div><h4>Semana de las Ciencias de la Tierra — Feria de Ciencias Exactas y Naturales, UBA</h4><p> Durante esta salida, participamos de una charla sobre cuevas y cavernas, donde aprendimos cómo se forman, sus características y cómo se investigan. Después, recorrí la feria de ciencias y visité un puesto sobre insectos y otros animales pequeños, como mariposas, escarabajos y arañas, donde conocí sus características y diferencias. Por último, recorrimos la reserva ecológica, donde nos explicaron sobre las distintas especies de árboles y plantas que habitan allí.
+
+
+</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Ambiente y comunidad</span></div><h4>Jardín San José — Pouponniere</h4><p>Estos primeros encuentros en el jardín fueron para conocer el lugar dónde íbamos a armar nuestra huerta ecológica. 
+Primero hicimos un reconocimiento de todo el espacio, luego limpiamos y ordenamos todo el cantero dónde ibamos a transplantar nuestros cultivos. Por último comenzamos a pensar en ideas para decorar el lugar para que se viera más lindo, buscamos información sobre que necesitaba cada cultivo, y nos dividimos los lugares dónde iba a plantar cada grupo.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Técnicas de estudio</span></div><h4>Taller de técnicas de estudio para universitarios — UCA</h4><p>En este taller, se abordaron distintas estrategias para estudiar de manera más organizada y mejorar la comprensión y retención de la información. Se explicó que existen diferentes formas de estudiar y que cada técnica puede servir para trabajar contenidos diferentes. Algunas técnicas ayudan a identificar y organizar las ideas principales, otras permiten relacionar conceptos y otras sirven para sintetizar la información y recordarla con mayor facilidad. También se trató la importancia de comprender lo que se estudia, en lugar de memorizar todo sin entenderlo, y de encontrar métodos que se adapten a las necesidades de cada estudiante.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Tecnología y ciudadanía digital</span></div><h4>Taller de IA y empleabilidad + Taller de redes sociales — UCA</h4><p>En el primer taller, hablamos sobre la relación entre la inteligencia artificial y el mundo laboral, aprendiendo cómo puede ayudar en la búsqueda de empleo y en distintas tareas. También vimos la importancia de verificar la información y utilizar estas herramientas de manera responsable.
+
+En el segundo taller, aprendimos cómo funcionan las redes sociales y cómo nuestras publicaciones influyen en nuestra identidad digital. Además, hablamos sobre la privacidad, la seguridad de los datos personales y la importancia de utilizarlas de forma responsable.
+
+
+</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Huerta ecológica</span></div><h4>Corporación Sur</h4><p>Durante las dos reuniones en la Corporación Sur, comenzamos a organizar nuestra huerta ecológica. Aprendimos a preparar compost utilizando restos orgánicos para crear un abono natural y conocimos formas de prevenir las plagas sin usar productos químicos, como rociar las plantas con agua y jabón blanco. Por último, dividimos los espacios para plantar nuestros cultivos y organizamos cómo íbamos a trabajar en la huerta.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Trabajo práctico</span></div><h4>Huerta ecológica — Jardín San José Pouponniere</h4><p>Durante mi semana en la huerta, realizamos distintas actividades para preparar, cuidar y decorar el espacio. El primer día limpiamos el lugar, trasplantamos plantas autóctonas y juntamos materiales para hacer compost. El segundo día preparamos el abono natural trabajando en equipo. El tercer día pintamos CDs y maderitas, comenzamos un mural y trasplantamos nuestros cultivos. Por último, terminamos los carteles y creamos flores con botellas de plástico reutilizadas para decorar la huerta.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Programación y robótica</span></div><h4>Taller de Robótica — Centro de Simulación de la Ciudad de Buenos Aires</h4><p>Tuvimos cuatro encuentros en el Centro de Simulación, donde participamos de un taller de robótica. Aprendimos conceptos básicos de programación y los pusimos en práctica con robots que programamos para avanzar, retroceder, girar al detectar obstáculos, encender luces y emitir sonidos. También conocimos sus partes principales, como los motores, las ruedas y los sensores, y aprendimos cómo funcionan y cómo reciben instrucciones mediante la programación.</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Salud y organización</span></div><h4>Campaña de vacunación</h4><p>Entre las tres orientaciones de quinto año, organizamos una campaña de vacunación para chicos de 5 y 11 años. Nos dividimos en comisiones para investigar sobre las vacunas, preparar materiales informativos, decorar el lugar y organizar juegos. También creamos una página web para que las familias pudieran sacar turno y consultar información. Además, se ofreció la vacuna contra el dengue para los adultos.
+El día de la campaña, nos organizamos en dos turnos y cada estudiante tenía una tarea asignada. En mi caso, me encargué de entregar certificados y caramelos a los chicos después de vacunarse. También hubo un compañero disfrazado de mosquito que se sacaba fotos con quienes se vacunaban contra el dengue, haciendo la experiencia más divertida.
+</p></article>
+          <article class="project"><div class="project-top"><span class="tag" style="color: rgb(208, 227, 251);">Proyecto solidario</span></div><h4>Misión Victoria — Preparación del viaje</h4><p>Hasta el momento, tuvimos varios encuentros para organizar las actividades que realizaremos durante el viaje. Trabajamos en equipo preparando juegos con materiales reciclados y buscando canciones interactivas para cantar, bailar y jugar con los chicos. Además, comenzamos a juntar donaciones de juguetes para regalarles durante nuestra visita.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" style="background-color: rgb(4, 30, 57);">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" style="color: rgb(255, 255, 255);">03 / Lo que fui desarrollando</div>
+          <h2 style="color: rgb(208, 227, 251);">Mis competencias y habilidades.</h2>
+          <p>Las experiencias escolares me permitieron poner en práctica capacidades individuales y grupales.</p>
+        </div>
+        <div class="skills">
+          <article class="skill"><div class="symbol">🤝</div><h3>Trabajo en equipo</h3><p>Colaborar, repartir tareas y organizarnos para alcanzar objetivos comunes.</p></article>
+          <article class="skill"><div class="symbol">💬</div><h3>Comunicación y escucha</h3><p>Compartir ideas, conversar y escuchar opiniones y realidades diferentes.</p></article>
+          <article class="skill"><div class="symbol">🗂️</div><h3>Organización y planificación</h3><p>Preparar materiales, distribuir tareas y planificar actividades.</p></article>
+          <article class="skill"><div class="symbol">✅</div><h3>Compromiso y responsabilidad</h3><p>Participar con dedicación y colaborar en cada propuesta.</p></article>
+          <article class="skill"><div class="symbol">🌱</div><h3>Aprendizaje y adaptación</h3><p>Incorporar conocimientos y descubrir nuevas formas de aprender y trabajar.</p></article>
+          <article class="skill"><div class="symbol">💻</div><h3>Herramientas digitales</h3><p>Buscar información, organizar contenidos y elaborar trabajos con herramientas digitales.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" style="background-color: rgb(208, 227, 251);">
+      <div class="container">
+        <div class="contact-box" style="font-weight: 400;">
+          <div>
+            <div class="section-kicker" style="color: rgb(255, 255, 255);">04 / Contacto</div>
+            <h2 style="color: rgb(208, 227, 251);">Gracias por visitar mi portfolio.</h2>
+            <p>Este espacio reúne parte de mi recorrido escolar, los proyectos en los que participé y los aprendizajes que me llevo de cada experiencia.</p>
+          </div><div>
+            
+            
+            <p>Si querés conocer más sobre mis trabajos o intercambiar ideas, podés contactarme por el siguiente medio.</p><p>Correo electrónico:                                            Martinajazromero1@gmail.com</p>
+          </div>
+          <a class="btn btn-primary" href="#inicio">Volver al inicio ↑</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background-color: rgb(208, 227, 251);">
+    <div class="container footer-inner">
+      <span style="color: rgb(0, 0, 0);">© 2026 · Portfolio digital de Martina Romero</span>
+      <span style="color: rgb(0, 0, 0);">Hecho para compartir mi recorrido de aprendizaje.</span>
+    </div>
+  </footer>
+
+
+</body></html>
